@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANAVON Skitest</title>
+  <script>
+    function updateValue(slider, labelId) {
+      const value = slider.value;
+      const label = document.getElementById(labelId);
+      label.textContent = value;
+      label.className = value <= 5 ? 'text-red-600 font-bold' : 'text-green-600 font-bold';
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black font-sans">
+  <header class="h-screen bg-cover bg-center text-white text-center flex items-end justify-center pb-16" style="background-image: url('https://i.ibb.co/v6QQqyW6/Bild5.png');">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-2xl md:text-4xl font-bold mb-2 bg-black/60 inline-block px-4 py-2 rounded">JETZT TESTEN & SKI-EXZELLENZ ERLEBEN!</h1>
+      <p class="text-base md:text-lg mb-6 bg-black/40 inline-block px-4 py-2 rounded">Erlebe die kompromisslose Qualität von ANAVON Ski auf der Piste.</p>
+    </div>
+  </header>
+
+  <form action="https://formsubmit.co/info@anavon-ski.com" method="POST" class="py-16 bg-white text-black">
+    <input type="hidden" name="_next" value="https://anavon.ch/danke" />
+    <div class="max-w-5xl mx-auto px-4 mb-12">
+      <h2 class="text-3xl font-bold mb-8 text-center">Teilnehmerdaten</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-sm font-medium mb-1">Ort</label>
+          <select name="Ort" required class="w-full border p-2 rounded">
+            <option disabled selected>Bitte wählen...</option>
+            <option>Arosa</option><option>Lenzerheide</option><option>Davos</option>
+            <option>St. Moritz Corviglia</option><option>St. Moritz Corvatsch</option>
+            <option>Diavolezza</option><option>Parpan</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Name des Testers</label>
+          <input type="text" name="Name" required class="w-full border p-2 rounded" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Testtag</label>
+          <input type="date" name="Testtag" required class="w-full border p-2 rounded" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">E-Mail-Adresse</label>
+          <input type="email" name="Email" required class="w-full border p-2 rounded" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Getestetes Modell + Länge</label>
+          <select name="Modell" required class="w-full border p-2 rounded">
+            <option disabled selected>Bitte wählen...</option>
+            <option>ARX 150</option><option>ARX 156</option><option>ARX 164</option><option>ARX 172</option>
+            <option>ARX 150 PRO</option><option>ARX 156 PRO</option><option>ARX 164 PRO</option><option>ARX 172 PRO</option>
+            <option>ASR 144</option><option>ASR 156</option><option>ASR 165</option>
+            <option>ADP 155/160</option><option>ADP 163/168</option>
+            <option>AFR 167</option><option>AFR 176</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">Bewertung</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-4 border rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-4">Steuerverhalten</h3>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Carveverhalten</label>
+            <div class="flex items-center gap-4">
+              <input type="range" min="1" max="10" name="Carveverhalten" class="w-full accent-[#C8102E]" oninput="updateValue(this, 'cv')"/>
+              <span id="cv" class="text-sm">5</span>
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Driftverhalten</label>
+            <div class="flex items-center gap-4">
+              <input type="range" min="1" max="10" name="Driftverhalten" class="w-full accent-[#C8102E]" oninput="updateValue(this, 'dv')"/>
+              <span id="dv" class="text-sm">5</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 border rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-4">Schwungverhalten</h3>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Kurze Schwünge</label>
+            <div class="flex items-center gap-4">
+              <input type="range" min="1" max="10" name="Kurze Schwünge" class="w-full accent-[#C8102E]" oninput="updateValue(this, 'ks')"/>
+              <span id="ks" class="text-sm">5</span>
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Mittlere Schwünge</label>
+            <div class="flex items-center gap-4">
+              <input type="range" min="1" max="10" name="Mittlere Schwünge" class="w-full accent-[#C8102E]" oninput="updateValue(this, 'ms')"/>
+              <span id="ms" class="text-sm">5</span>
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Lange Schwünge</label>
+            <div class="flex items-center gap-4">
+              <input type="range" min="1" max="10" name="Lange Schwünge" class="w-full accent-[#C8102E]" oninput="updateValue(this, 'ls')"/>
+              <span id="ls" class="text-sm">5</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 border rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-4">Tempoverhalten</h3>
+          <label class="block text-sm font-medium mb-1">Laufruhe bei Schussfahrt</label>
+          <div class="flex items-center gap-4">
+            <input type="range" min="1" max="10" name="Laufruhe bei Schussfahrt" class="w-full accent-[#C8102E]" oninput="updateValue(this, 'ts')"/>
+            <span id="ts" class="text-sm">5</span>
+          </div>
+        </div>
+        <div class="p-4 border rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-4">Design</h3>
+          <label class="block text-sm font-medium mb-1">Wie gefällt dir das Design des Skis?</label>
+          <div class="flex items-center gap-4">
+            <input type="range" min="1" max="10" name="Design" class="w-full accent-[#C8102E]" oninput="updateValue(this, 'de')"/>
+            <span id="de" class="text-sm">5</span>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <textarea name="Kommentare" placeholder="Weitere Kommentare..." class="w-full max-w-3xl h-32 border p-4 text-sm"></textarea>
+      </div>
+      <div class="text-center mt-12">
+        <button type="submit" class="bg-[#C8102E] text-white font-semibold px-6 py-3 rounded hover:bg-red-700 transition">Formular absenden</button>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
