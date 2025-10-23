@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -11,7 +10,8 @@
       const value = slider.value;
       const label = document.getElementById(labelId);
       label.textContent = value;
-      label.className = value <= 5 ? 'text-red-600 font-bold' : 'text-green-600 font-bold';
+      // kleine Verbesserung: text-sm bleibt erhalten
+      label.className = 'text-sm ' + (value <= 5 ? 'text-red-600 font-bold' : 'text-green-600 font-bold');
     }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -34,9 +34,30 @@
           <label class="block text-sm font-medium mb-1">Ort</label>
           <select name="Ort" required class="w-full border p-2 rounded">
             <option disabled selected>Bitte wählen...</option>
-            <option>Arosa</option><option>Lenzerheide</option><option>Davos</option>
-            <option>St. Moritz Corviglia</option><option>St. Moritz Corvatsch</option>
-            <option>Diavolezza</option><option>Parpan</option>
+
+            <!-- Alphabetisch sortiert, mit Detailstandorten -->
+            <option value="Adelboden – Engstligenalp">Adelboden – Engstligenalp</option>
+            <option value="Arosa – Weisshorn Mittelstation">Arosa – Weisshorn Mittelstation</option>
+            <option value="Davos, Parsenn – Höhenweg">Davos, Parsenn – Höhenweg</option>
+            <option value="Davos, Parsenn – Parsennhütte">Davos, Parsenn – Parsennhütte</option>
+            <option value="Gstaad – Saanersloch Mittelstation">Gstaad – Saanersloch Mittelstation</option>
+            <option value="Hochgurgl – Hotel Riml">Hochgurgl – Hotel Riml</option>
+            <option value="Hochwang – Triemel / Fatschel">Hochwang – Triemel / Fatschel</option>
+            <option value="Klosters – Gotschna Gipfel">Klosters – Gotschna Gipfel</option>
+            <option value="Klosters, Madrisa – Mittelstation">Klosters, Madrisa – Mittelstation</option>
+            <option value="Laax – Plaun / Crap Sogn Gion">Laax – Plaun / Crap Sogn Gion</option>
+            <option value="Lenzerheide – Chili Hütta">Lenzerheide – Chili Hütta</option>
+            <option value="Obersaxen – Restaurant Kartitscha">Obersaxen – Restaurant Kartitscha</option>
+            <option value="Oberengadin, Diavolezza – Bergstation">Oberengadin, Diavolezza – Bergstation</option>
+            <option value="Parpan – Talstation">Parpan – Talstation</option>
+            <option value="Pizol – Pardiel">Pizol – Pardiel</option>
+            <option value="Saas-Fee – Mittelstation Morenia">Saas-Fee – Mittelstation Morenia</option>
+            <option value="St. Moritz, Coratsch – Murtèl">St. Moritz, Corvatsch – Murtèl</option>
+            <option value="St. Moritz, Corviglia – Bergstation / SOS">St. Moritz, Corviglia – Bergstation / SOS</option>
+            <option value="St. Moritz, Corviglia – Marguns">St. Moritz, Corviglia – Marguns</option>
+            <option value="St. Moritz, Corviglia – Salastrains">St. Moritz, Corviglia – Salastrains</option>
+            <option value="SWS Jungfrau Region / Eigergletscher – Terasse">SWS Jungfrau Region / Eigergletscher – Terasse</option>
+            <option value="Titlis / Engelberg – Stand">Titlis / Engelberg – Stand</option>
           </select>
         </div>
         <div>
